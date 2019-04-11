@@ -1,6 +1,6 @@
 function fetchTrainSchedules() {
 
-	var baseUrl = "https://rata.digitraffic.fi/api/v1/live-trains/station/";
+	var url = "https://rata.digitraffic.fi/api/v1/live-trains/station/";
 
 	var station = "HKI";
 	
