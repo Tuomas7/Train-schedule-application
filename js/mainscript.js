@@ -28,17 +28,23 @@ function createPage(jsonObject) {
 
 	for (var i = 0; i < jsonObject.length; i++) {
 
-		var testRow = $("<div></div>").addClass("row");
-		testRow.append($("<hr>"));
+		var tableRow = $("<tr>").addClass("row");
 	
 		if (jsonObject[i].trainNumber != null) {
-			testRow.append($("<p></p>").text(jsonObject[i].trainNumber));
+			tableRow.append($("<td>").text(jsonObject[i].trainNumber));
 		}
 		else {
-			testRow.append($("<p></p>").text("N/A")));
+			testRow.append($("<td>").text("N/A"));
+		}
+		
+		if (jsonObject[i].departureDate != null) {
+			tableRow.append($("<td>").text(jsonObject[i].departureDate));
+		}
+		else {
+			testRow.append($("<td>").text("N/A"));
 		}
 
-		$("#trainsTable").append(testRow);
+		$("#trainsTable").append(tableRow);
 	}
 }
 
