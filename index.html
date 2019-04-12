@@ -13,6 +13,15 @@
 
 			<h1>Station information</h1>
 			
+			<form>
+				<div class="form-group">
+					<label for="stationInput">Station name</label>
+					<input list="stationSelect" type="text" class="form-control" id="stationInput" placeholder="Enter station">
+						<datalist id="stationSelect">
+						</datalist>
+				</div>
+			</form>
+			
 			<table id="trainsTable" class="table">
 				<thead>
 					<th>Train</th>
@@ -24,8 +33,6 @@
 				</tbody>
 			</table>
 
-			<p><button id="fetch" type="button" class="btn btn-primary">Fetch</button></p>
-			
 			<script src="js/jquery-3.3.0.min.js"></script>
 			<script src="js/bootstrap.js"></script>
 			<script src="js/mainscript.js"></script>
