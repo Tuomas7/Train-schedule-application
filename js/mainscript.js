@@ -24,27 +24,31 @@ function fetchTrainSchedules() {
 
 function createPage(jsonObject) {
 
-	$("#trainsTable").empty();
+	$("#trainRows").empty();
 
 	for (var i = 0; i < jsonObject.length; i++) {
 
-		var tableRow = $("<tr>").addClass("row");
+		var tableRow = $("<tr>");
 	
 		if (jsonObject[i].trainNumber != null) {
 			tableRow.append($("<td>").text(jsonObject[i].trainNumber));
 		}
 		else {
-			testRow.append($("<td>").text("N/A"));
+			tableRow.append($("<td>").text("N/A"));
 		}
 		
-		if (jsonObject[i].departureDate != null) {
-			tableRow.append($("<td>").text(jsonObject[i].departureDate));
+		if (jsonObject[i].timeTableRows != null) {
+			tableRow.append($("<td>").text(jsonObject[i].timeTableRows[0].stationShortCode));
+			tableRow.append($("<td>").text(jsonObject[i].timeTableRows[jsonObject[i].timeTableRows.length-1].stationShortCode));
+			tableRow.append($("<td>").text(new Date(jsonObject[i].timeTableRows[jsonObject[i].timeTableRows.length-1].scheduledTime).toLocaleTimeString()));
 		}
 		else {
-			testRow.append($("<td>").text("N/A"));
+			tableRow.append($("<td>").text("N/A"));
+			tableRow.append($("<td>").text("N/A"));
+			tableRow.append($("<td>").text("N/A"));
 		}
 
-		$("#trainsTable").append(tableRow);
+		$("#trainRows").append(tableRow);
 	}
 }
 

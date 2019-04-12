@@ -13,7 +13,16 @@
 
 			<h1>Station information</h1>
 			
-			<table id="trainsTable"></table>
+			<table id="trainsTable" class="table">
+				<thead>
+					<th>Train</th>
+					<th>Departure station</th> 
+					<th>Arrival station</th>
+					<th>Arrives at</th>
+				</thead>
+				<tbody id="trainRows">
+				</tbody>
+			</table>
 
 			<p><button id="fetch" type="button" class="btn btn-primary">Fetch</button></p>
 			
