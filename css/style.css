@@ -1,0 +1,51 @@
+html, body {
+	height: 100%;
+	color: white;
+}
+
+body {
+	background-image: url("../img/trainBackgroundImage.JPG");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+main {
+	height: auto;
+	min-height: 100%;
+	background-color: rgba(0,0,0,0.85);
+}
+
+h1 {
+	width: 100%;
+	padding: 25px;
+	font-size: 200%;
+	background-color: #56A319
+}
+
+form {
+	width: 50%;
+}
+
+table {
+	border-radius:5px;
+	background-color: white; 
+}
+
+.container {
+	padding: 0;
+}
+
+.red-text {
+	color: red;
+}
+
+.small-text {
+	color: black;
+	font-size: small;
+}
+
+#subContents {
+	padding: 25px;
+}

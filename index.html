@@ -6,38 +6,46 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Train schedule application</title>
 		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 	</head>
 
 	<body>
+	
 		<main class="container">
-
-			<h1>Station information</h1>
 			
-			<form>
-				<div class="form-group">
-					<label for="stationInput">Station name</label>
-					<input list="stationSelect" type="text" class="form-control" id="stationInput" placeholder="Enter station">
-						<datalist id="stationSelect">
-						</datalist>
-				</div>
-			</form>
-			
-			<table id="trainsTable" class="table">
-				<thead>
-					<th>Train</th>
-					<th>Departure station</th> 
-					<th>Arrival station</th>
-					<th>Arrives at</th>
-				</thead>
-				<tbody id="trainRows">
-				</tbody>
-			</table>
+			<h1>Train schedule application</h1>
 
+			<div id="subContents">
+			
+				<form id="stationSelectForm">
+					<div class="form-group">
+						<label for="stationInput">Station name</label>
+						<input list="stationSelect" type="text" class="form-control" id="stationInput" placeholder="Enter station">
+							<datalist id="stationSelect">
+							</datalist>
+						<small id="inputHelp" class="form-text text-muted">Press Enter to search.</small>
+					</div>
+				</form>
+			
+				<table id="trainsTable" class="table table-striped d-none">
+					<thead>
+						<th>Train</th>
+						<th>Departure station</th> 
+						<th>Destination</th>
+						<th>Departs at</th>
+					</thead>
+					<tbody id="trainRows">
+					</tbody>
+				</table>
+
+				<h5 id="noTrainsText" class="red-text d-none">There are no trains departing from this station within the next 12 hours</h5>
+				
+			</div>
+				
 			<script src="js/jquery-3.3.0.min.js"></script>
 			<script src="js/bootstrap.js"></script>
 			<script src="js/mainscript.js"></script>
 			
 		</main>
 	</body>
-	
 </html>
