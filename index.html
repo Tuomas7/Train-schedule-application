@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+	<!-- Settings and styles for the website -->
 	<head>
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,24 +10,31 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 	</head>
 
+	<!-- The basic frame for the website, to be expanded with javaScript later -->
 	<body>
 	
+		<!-- The black overlay on top of the background image -->
 		<main class="container">
 			
+			<!-- The green bar at the top of the page -->
 			<h1>Train schedule application</h1>
 
+			<!-- Everything below the green bar -->
 			<div id="subContents">
 			
+				<!-- The search bar where the user can select a station -->
 				<form id="stationSelectForm">
 					<div class="form-group">
 						<label for="stationInput">Station name</label>
-						<input list="stationSelect" type="text" class="form-control" id="stationInput" placeholder="Enter station">
+						<input id="stationInput" list="stationSelect" type="text" class="form-control" placeholder="Enter station" autofocus>
 							<datalist id="stationSelect">
 							</datalist>
 						<small id="inputHelp" class="form-text text-muted">Press Enter to search.</small>
+						<small id="stationNotFoundError" class="red-text d-none">Station not found. Please check that it's spelled correctly, or choose one from the list</small>
 					</div>
 				</form>
-			
+		
+				<!-- The table that contains all the trains departing from the station -->		
 				<table id="trainsTable" class="table table-striped d-none">
 					<thead>
 						<th>Train</th>
@@ -38,10 +46,12 @@
 					</tbody>
 				</table>
 
+				<!-- Error message to be shown if there are no trains -->
 				<h5 id="noTrainsText" class="red-text d-none">There are no trains departing from this station within the next 12 hours</h5>
 				
 			</div>
 				
+			<!-- The scripts for the website, placed at the end so that they are executed after the page has been created -->
 			<script src="js/jquery-3.3.0.min.js"></script>
 			<script src="js/bootstrap.js"></script>
 			<script src="js/mainscript.js"></script>
